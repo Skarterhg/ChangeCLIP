@@ -50,11 +50,11 @@ bash clip_infer_sysu.sh
 [ChangeCLIP_best_weights](https://pan.baidu.com/s/1JmBPzg4wRwbgIqRU9Pep5g), 提取码: rscd
 
 ## 6. The following is the comparison between ChangeCLIP and advanced algorithms.
-![LEVIR-CD](docs\levir-cd.png)
-![LEVIR-CD+](docs\levir-cd+.png)
-![WHUCD](docs\whucd.png)
-![CDD](docs\cdd.png)
-![SYSU-CD](docs\sysu-cd.png)
+![LEVIR-CD](docs/levir-cd.png)
+![LEVIR-CD+](docs/levir-cd+.png)
+![WHUCD](docs/whucd.png)
+![CDD](docs/cdd.png)
+![SYSU-CD](docs/sysu-cd.png)
 
 # Acknowledgements  
 This repo benefits from awesome works of [mmsegmentation](https://github.com/open-mmlab/mmsegmentation), [DenseCLIP](https://github.com/raoyongming/DenseCLIP),
