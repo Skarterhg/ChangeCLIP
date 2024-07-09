@@ -2,8 +2,8 @@ import os
 import cv2
 import numpy as np
 
-p = '/home/ps/zhaoyq_files/changeclip/ChangeCLIP/work_dirs/changeclip_levircdplus/test_pred'
-save_result = '/home/ps/zhaoyq_files/changeclip/ChangeCLIP/work_dirs/changeclip_levircdplus/test_pred_vis'
+p = '/home/user/ChangeCLIP/work_dirs/changeclip_sysu/test_result_src'
+save_result = '/home/user/ChangeCLIP/work_dirs/changeclip_sysu/test_result_src_vis'
 os.makedirs(save_result, exist_ok=True)
 files = os.listdir(p)
 for item in files:

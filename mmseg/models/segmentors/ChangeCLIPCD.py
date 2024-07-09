@@ -380,16 +380,25 @@ class ChangeCLIP(BaseSegmentor):
         textA = []
         textB = []
         for i in range(len(img_infos)):
-            if train:
+            try:
                 foreA = ', '.join(['remote sensing image foreground objects']+img_infos[i].jsonA)
-            else:
-                foreA = ', '.join(['remote sensing image foreground objects']+img_infos[i]['jsonA'])
-            backA = ', '.join(['remote sensing image background objects'])
-            if train:
                 foreB = ', '.join(['remote sensing image foreground objects']+img_infos[i].jsonB)
-            else:
-                foreB = ', '.join(['remote sensing image foreground objects']+img_infos[i]['jsonA'])
+            except:
+                foreA = ', '.join(['remote sensing image foreground objects']+img_infos[i]['jsonA'])
+                foreB = ', '.join(['remote sensing image foreground objects']+img_infos[i]['jsonB'])
+            backA = ', '.join(['remote sensing image background objects'])
             backB = ', '.join(['remote sensing image background objects'])
+
+            # if train:
+            #     foreA = ', '.join(['remote sensing image foreground objects']+img_infos[i].jsonA)
+            # else:
+            #     foreA = ', '.join(['remote sensing image foreground objects']+img_infos[i]['jsonA'])
+            # backA = ', '.join(['remote sensing image background objects'])
+            # if train:
+            #     foreB = ', '.join(['remote sensing image foreground objects']+img_infos[i].jsonB)
+            # else:
+            #     foreB = ', '.join(['remote sensing image foreground objects']+img_infos[i]['jsonA'])
+            # backB = ', '.join(['remote sensing image background objects'])
             textA.append(torch.cat([tokenize(c, context_length=self.context_length) for c in [backA, foreA]]).unsqueeze(0))
             textB.append(torch.cat([tokenize(c, context_length=self.context_length) for c in [backB, foreB]]).unsqueeze(0))
         return torch.cat(textA, dim=0), torch.cat(textB, dim=0)

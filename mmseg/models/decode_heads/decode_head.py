@@ -387,10 +387,13 @@ class BaseDecodeHead(BaseModule, metaclass=ABCMeta):
         Returns:
             Tensor: Outputs segmentation logits map.
         """
-
+        try:
+            img_shape = batch_img_metas[0]['img_shape']
+        except:
+            img_shape = batch_img_metas[0].img_shape
         seg_logits = resize(
             input=seg_logits,
-            size=batch_img_metas[0]['img_shape'],
+            size=img_shape,
             mode='bilinear',
             align_corners=self.align_corners)
         return seg_logits
