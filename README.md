@@ -1,7 +1,8 @@
 # ChangeCLIP: Remote sensing change detection with multimodal vision-language representation learning  
 https://www.sciencedirect.com/science/article/pii/S0924271624000042  
 
-English | [简体中文](README_zh-CN.md)
+You can install the environment through environment.yml and requirements.txt.  
+
 ## 1. In order to facilitate the use of relative paths, CDPATH is set in the ~/.bashrc file. Here is how to add this setting in the ~/.bashrc。
    ![CDPATH](image.png)  
    After adding CDPATH as mentioned above, you can quickly navigate to the respective data path in the following way:  
@@ -43,6 +44,10 @@ bash clip_infer_sysu.sh
 /home/user/dsj_files/CDdata/SYSU-CD/test/time1_clipcls_56_vit16.json
 /home/user/dsj_files/CDdata/SYSU-CD/test/time2_clipcls_56_vit16.json
 ```
+
+To facilitate debugging code, the following is the download method of the SYSU-CD dataset.    
+https://pan.baidu.com/s/1E2Q0BrnWqR2Fkxj5LRRU7A passwd: qyvg  
+https://drive.google.com/file/d/1MYEf67kO72avJWik1Dtlm3h9RWrSQQLo/view?usp=sharing
 
 ## 4.For training and testing, You can view the contents of the tools/train.sh file and set the training plan yourself.
 
